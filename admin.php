@@ -36,7 +36,7 @@ $search_filter = ''; $search_filter_input = '';
 
                 <li><a href="#" id="search">Search <span class="glyphicon glyphicon-search"></span></a></li>
 
-                <li><a href="#" id="">Manage Staff <i class="fa fa-users"></i></span></a></li>
+                <li><a href="#" id="manage_staff">Manage Staff <i class="fa fa-users"></i></span></a></li>
 
                 <li><a href="#" id="events_meetings">Events & Meetings <span class="glyphicon glyphicon-calendar"></span></a></li>
 
@@ -555,9 +555,15 @@ $search_filter = ''; $search_filter_input = '';
 
 	</div>
 
-        <!-- End  Search Page -->     
+        <!-- End  Search Page -->    
 
+		<!-- Manage Staff Page -->
 
+		<div id="manage_staff_page">
+			<h3>Manage Staff</h3>
+		</div>
+
+		<!-- End Manage Staff Page -->
 
 
        <!-- Events & Meetings Page -->
@@ -626,118 +632,133 @@ $search_filter = ''; $search_filter_input = '';
 
        	<div id="leave_absences_page">
 
-       		<h3>Leave & Abesnces</h3>
-					<div class="row">
+			<ul class="nav nav-tabs">
+			  <li class="active"><a data-toggle="tab" href="#personal" style="color: #000"><h5>PERSONAL</h5></a></li>
+			  <li><a data-toggle="tab" href="#general" style="color: #000"><h5>GENERAL</h5></a></li>
+			</ul>
 
-						
-                	
-	                	<div class="col-md-4"><form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+			<div class="tab-content">
 
-	                		<?php
+				<div id="personal" class="tab-pane fade in active row">    
+					<div class="col-md-4" style="padding-top: 20px"><form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+
+							<?php
 								$sql = "SELECT * FROM `users` WHERE `username` = '$session_user' ";
 								$query = mysqli_query($conn,$sql); 
 								while ($row = mysqli_fetch_array($query , MYSQLI_ASSOC) ) {											
 								//echo '<h5>'.$row['firstname'].'   '.$row['user_id'].'</h5>';							
 							?>
 
-	                		<div class="row">
-	                			<div class="col-md-4"><input type="number" class="form-control" name="user_id" readonly="" value="<?php echo $row['user_id'] ?>"></div>
-	                			<div class="col-md-8"><input type="text" class="form-control" name="fullname" readonly="" value="<?php echo $row['lastname'].' '.$row['firstname'] ?>"></div>
-	                		</div>
+						        <div class="row">
+						           	<div class="col-md-4"><input type="number" class="form-control" name="user_id" readonly="" value="<?php echo $row['user_id'] ?>"></div>
+						           	<div class="col-md-8"><input type="text" class="form-control" name="fullname" readonly="" value="<?php echo $row['lastname'].' '.$row['firstname'] ?>"></div>
+						    	</div>
 
-	                		<div class="row">
-	                			<div class="col-md-6"><label>From</label><input type="date" class="form-control" name="start_date"></div>
-	                			<div class="col-md-6"><label>To</label><input type="date" class="form-control" name="end_date"></div>
-	                		</div>
+						        <div class="row">
+						        	<div class="col-md-6"><label>From</label><input type="date" class="form-control" name="start_date"></div>
+						        	<div class="col-md-6"><label>To</label><input type="date" class="form-control" name="end_date"></div>
+						    	</div>
 
-	                		<div class="row">
-		                		<div class="col-md-6"><label>Reason</label><select class="form-control" name="reason">
-		                			<option>OFFICIAL LEAVE</option>
-		                			<option>SICK LEAVE</option>
-		                			<option>STUDY LEAVE</option>
-		                			<option>MATERNITY LEAVE</option>
-		                			<option>PATERNITY LEAVE</option>
-		                		</select></div>
-		                		<div class="col-md-6"><label>Status</label><select class="form-control" name="status" readonly="">
-		                			<option selected="">PENDING</option>
-		                			<option>GRANTED</option>
-		                			<option>DENIED</option>
-		                		</select></div>
-	                		</div>
-	                		<p></p>
-	                		<input type="submit" class="btn btn-primary" name="apply_leave_btn" value="Apply">
+						        <div class="row">
+							        <div class="col-md-6"><label>Reason</label><select class="form-control" name="reason">
+							        	<option>OFFICIAL LEAVE</option>
+							        	<option>SICK LEAVE</option>
+							        	<option>STUDY LEAVE</option>
+							       		<option>MATERNITY LEAVE</option>
+							        	<option>PATERNITY LEAVE</option>
+							        </select></div>
+							        <div class="col-md-6"><label>Status</label><select class="form-control" name="status" readonly="">
+							        	<option selected="">PENDING</option>
+							    	</select></div>
+						    	</div>
+						   			<p></p>
+						       	<input type="submit" class="btn btn-primary" name="apply_leave_btn" value="Apply">
 
-	                	</form></div>
-	                	<?php
-	                	}
-	                	?>
-
-	                	<div class="col-md-8">
-	                		<?php
-								$sql = "SELECT * FROM `leave_absences` WHERE `status`='PENDING' ";
-								$query = mysqli_query($conn,$sql); 
-								while ($row = mysqli_fetch_array($query , MYSQLI_ASSOC) ) {											
-								//echo '<h5>'.$row['fullname'].'   '.$row['user_id'].'</h5>';
-								?>
-									<table class="table table-responsive">
-										<tr><form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
-											<td><?php echo $row['user_id'] ?></td>
-											<td><?php echo $row['fullname'] ?></td>
-											<td><?php echo $row['reason'] ?></td>
-											<input type="hidden" class="form-control" name="user_id" value="<?php echo $row['user_id'] ?>">
-											<input type="hidden" class="form-control" name="id" value="<?php echo $row['id'] ?>">
-											<td><input type="date" class="form-control" name="start_date" value="<?php echo $row['start_date'] ?>"></td>
-											<td><input type="date" class="form-control" name="end_date" value="<?php echo $row['end_date'] ?>"></td>
-											<td><select class="form-control" name="status">
-												<option selected=""><?php echo $row['status'] ?></option>
-												<option>GRANTED</option>
-												<option>DENIED</option>
-											</select></td>
-											<td><button type="submit" class="btn btn-info" name="leave_response"><span class="glyphicon glyphicon-send"></span></button></td>
-										</form></tr>
-									</table>
-								<?php
-								}	
-								$sql = "SELECT COUNT(*) FROM `leave_absences` WHERE `status`='PENDING' ";
-								$query = mysqli_query($conn,$sql);
-								$row=mysqli_fetch_array($query,MYSQLI_NUM);
-								//echo $row[0];
-								if ($row[0] == 0) {
-									echo "<h3> there are no new requests at this time </h3>";
-										}						
+					</form></div>
+						   	<?php
+							}
 							?>
+				</div>
 
-	                	</div>
 
+				<div id="general" class="tab-pane fade row">
+				    
+					<div class="col-md-6">
+						<?php
+							$sql = "SELECT * FROM `leave_absences` WHERE `status`='PENDING' ";
+							$query = mysqli_query($conn,$sql); 
+							while ($row = mysqli_fetch_array($query , MYSQLI_ASSOC) ) {											
+							//echo '<h5>'.$row['fullname'].'   '.$row['user_id'].'</h5>';
+						?>
+						<table class="table table-responsive">
+							<tr><form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+								<td><?php echo $row['user_id'] ?></td>
+								<td><?php echo $row['fullname'] ?></td>
+								<td><?php echo $row['reason'] ?></td>
+								<input type="hidden" class="form-control" name="user_id" value="<?php echo $row['user_id'] ?>">
+								<input type="hidden" class="form-control" name="id" value="<?php echo $row['id'] ?>">
+								<td><input type="date" class="form-control" name="start_date" value="<?php echo $row['start_date'] ?>"></td>
+								<td><input type="date" class="form-control" name="end_date" value="<?php echo $row['end_date'] ?>"></td>
+								<td><select class="form-control" name="status">
+									<option selected=""><?php echo $row['status'] ?></option>
+									<option>GRANTED</option>
+									<option>DENIED</option>
+								</select></td>
+								<td><button type="submit" class="btn btn-info" name="leave_response"><span class="glyphicon glyphicon-send"></span></button></td>
+							</form></tr>
+						</table>
+						<?php
+							}	
+							$sql = "SELECT COUNT(*) FROM `leave_absences` WHERE `status`='PENDING' ";
+							$query = mysqli_query($conn,$sql);
+							$row=mysqli_fetch_array($query,MYSQLI_NUM);
+							//echo $row[0];
+							if ($row[0] == 0) {
+								echo "<h3> there are no new requests at this time </h3>";
+								}						
+						?>
 
-                	</div>
-                	<br>
-                	<div class="row">
-                		<div class="col-md-4"></div>
-                		<div class="col-md-6">
-	                		<?php		    			
+					</div>	
+						<br>
+					                	
+					                		
+					<div class="col-md-6">
+						<?php		    			
 							$sql = "SELECT * FROM `leave_absences` ";
 							$query = mysqli_query($conn,$sql); 
 							while ($row = mysqli_fetch_array($query , MYSQLI_ASSOC) ) {											
-							//echo '<h5>'.$row['firstname'].'   '.$row['user_id'].'</h5>';
-							
-							?>
-								<table class="table table-responsive">
-								<tr>
-									<td><?php echo $row['user_id'] ?></td>
-									<td><?php echo $row['fullname'] ?></td>
-									<td><?php echo $row['reason'] ?></td>
-									<td><?php echo $row['start_date'] ?></td>
-									<td><?php echo $row['end_date'] ?></td>
-									<td><?php echo $row['status'] ?></td>
-								</tr>
-								</table>
+							//echo '<h5>'.$row['firstname'].'   '.$row['user_id'].'</h5>';							
+						?>
+						<table class="table table-responsive">
+							<tr>
+								<td><?php echo $row['user_id'] ?></td>
+								<td><?php echo $row['fullname'] ?></td>
+								<td><?php echo $row['reason'] ?></td>
+								<td><?php echo $row['start_date'] ?></td>
+								<td><?php echo $row['end_date'] ?></td>
+								<td><?php echo $row['status'] ?></td>
+							</tr>
+						</table>
 
-							<?php 
-							} 
-							?>
-	                	</div>
-                	</div>
+						<?php 
+						} 
+						?>
+					</div>
+				                	
+				</div>
+
+
+			</div>
+					
+						
+                	
+	                	
+
+	                	
+
+
+                
+                	
 
 
        	</div>
@@ -808,6 +829,7 @@ $search_filter = ''; $search_filter_input = '';
 	   		$('#activity_page').css('display','block');
 	   		$('#view_all_page').css('display','none');
 	   		$('#search_page').css('display','none');
+	   		$('#manage_staff_page').css('display','none');
 	   		$('#events_meetings_page').css('display','none');
 	   		$('#leave_absences_page').css('display','none');
 	   		$('#settings_page').css('display','none');
@@ -821,11 +843,12 @@ $search_filter = ''; $search_filter_input = '';
 	   		$('#activity_page').css('display','none');
 	   		$('#view_all_page').css('display','block');
 	   		$('#search_page').css('display','none');
+	   		$('#manage_staff_page').css('display','none');
 	   		$('#events_meetings_page').css('display','none');
 	   		$('#leave_absences_page').css('display','none');
 	   		$('#settings_page').css('display','none');
 
-	   		$('#activity , #view_all , #search , #events_meetings , #leave_absences').removeClass('active');
+	   		$('#activity , #view_all , #search , #manage_staff , #events_meetings , #leave_absences , #settings').removeClass('active');
 	   		$(this).addClass('active');
 	   	});
 
@@ -833,11 +856,25 @@ $search_filter = ''; $search_filter_input = '';
 	   		$('#activity_page').css('display','none');
 	   		$('#view_all_page').css('display','none');
 	   		$('#search_page').css('display','block');
+	   		$('#manage_staff_page').css('display','none');
 	   		$('#events_meetings_page').css('display','none');
 	   		$('#leave_absences_page').css('display','none');
 	   		$('#settings_page').css('display','none');
 
-	   		$('#activity , #view_all , #search , #events_meetings , #leave_absences , #settings').removeClass('active');
+	   		$('#activity , #view_all , #search , #manage_staff , #events_meetings , #leave_absences , #settings').removeClass('active');
+	   		$(this).addClass('active');
+	   	});
+
+	   	$('#manage_staff').click(function(){
+	   		$('#activity_page').css('display','none');
+	   		$('#view_all_page').css('display','none');
+	   		$('#search_page').css('display','none');
+	   		$('#manage_staff_page').css('display','block');
+	   		$('#events_meetings_page').css('display','none');
+	   		$('#leave_absences_page').css('display','none');
+	   		$('#settings_page').css('display','none');
+
+	   		$('#activity , #view_all , #search , #manage_staff , #events_meetings , #leave_absences , #settings').removeClass('active');
 	   		$(this).addClass('active');
 	   	});
 
@@ -845,11 +882,12 @@ $search_filter = ''; $search_filter_input = '';
 	   		$('#activity_page').css('display','none');
 	   		$('#view_all_page').css('display','none');
 	   		$('#search_page').css('display','none');
+	   		$('#manage_staff_page').css('display','none');
 	   		$('#events_meetings_page').css('display','block');
 	   		$('#leave_absences_page').css('display','none');
 	   		$('#settings_page').css('display','none');
 
-	   		$('#activity , #view_all , #search , #events_meetings , #leave_absences , #settings').removeClass('active');
+	   		$('#activity , #view_all , #search , #manage_staff , #events_meetings , #leave_absences , #settings').removeClass('active');
 	   		$(this).addClass('active');
 	   	});
 
@@ -857,11 +895,12 @@ $search_filter = ''; $search_filter_input = '';
 	   		$('#activity_page').css('display','none');
 	   		$('#view_all_page').css('display','none');
 	   		$('#search_page').css('display','none');
+	   		$('#manage_staff_page').css('display','none');
 	   		$('#events_meetings_page').css('display','none');
 	   		$('#leave_absences_page').css('display','block');
 	   		$('#settings_page').css('display','none');
 
-	   		$('#activity , #view_all , #search , #events_meetings , #leave_absences , #settings').removeClass('active');
+	   		$('#activity , #view_all , #search , #manage_staff , #events_meetings , #leave_absences , #settings').removeClass('active');
 	   		$(this).addClass('active');
 	   	});
 
@@ -869,11 +908,12 @@ $search_filter = ''; $search_filter_input = '';
 	   		$('#activity_page').css('display','none');
 	   		$('#view_all_page').css('display','none');
 	   		$('#search_page').css('display','none');
+	   		$('#manage_staff_page').css('display','none');
 	   		$('#events_meetings_page').css('display','none');
 	   		$('#leave_absences_page').css('display','none');
 	   		$('#settings_page').css('display','block');
 
-	   		$('#activity , #view_all , #search , #events_meetings , #leave_absences , #settings').removeClass('active');
+	   		$('#activity , #view_all , #search , #manage_staff , #events_meetings , #leave_absences , #settings').removeClass('active');
 	   		$(this).addClass('active');
 	   	});
 

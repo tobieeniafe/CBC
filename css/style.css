@@ -152,7 +152,7 @@ float: right;
 }
 
 
-#view_all_page , #search_page , #events_meetings_page , #leave_absences_page {
+#view_all_page , #search_page , #events_meetings_page , #leave_absences_page , #manage_staff_page {
     display: none;
 }
 
