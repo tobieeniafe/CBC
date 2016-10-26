@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2016 at 09:44 PM
+-- Generation Time: Oct 21, 2016 at 12:01 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -40,7 +40,7 @@ CREATE TABLE `educational_details` (
   `Professional_name` varchar(50) NOT NULL,
   `Professional_entry` date NOT NULL,
   `Professional_exit` date NOT NULL,
-  `Professional_certificates` varchar(50) NOT NULL,
+  `Professional_certification` varchar(50) NOT NULL,
   `Language_spoken1` varchar(50) NOT NULL,
   `Speaking_status1` varchar(50) NOT NULL,
   `Writing_status1` varchar(50) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `educational_details` (
 -- Dumping data for table `educational_details`
 --
 
-INSERT INTO `educational_details` (`id`, `user_id`, `College_name`, `College_entry`, `College_exit`, `College_certification`, `Highschool_name`, `Highschool_entry`, `Highschool_exit`, `Highschool_certification`, `Professional_name`, `Professional_entry`, `Professional_exit`, `Professional_certificates`, `Language_spoken1`, `Speaking_status1`, `Writing_status1`, `Reading_status1`, `Language_spoken2`, `Speaking_status2`, `Writing_status2`, `Reading_status2`, `Language_spoken3`, `Speaking_status3`, `Writing_status3`, `Reading_status3`) VALUES
+INSERT INTO `educational_details` (`id`, `user_id`, `College_name`, `College_entry`, `College_exit`, `College_certification`, `Highschool_name`, `Highschool_entry`, `Highschool_exit`, `Highschool_certification`, `Professional_name`, `Professional_entry`, `Professional_exit`, `Professional_certification`, `Language_spoken1`, `Speaking_status1`, `Writing_status1`, `Reading_status1`, `Language_spoken2`, `Speaking_status2`, `Writing_status2`, `Reading_status2`, `Language_spoken3`, `Speaking_status3`, `Writing_status3`, `Reading_status3`) VALUES
 (1, 100, 'MIT', '2016-09-25', '2016-09-26', 'BSc', 'MIT', '2016-09-26', '2016-09-26', 'SSCE', 'CISCO', '2016-09-25', '2016-09-25', 'CCNA', 'English', 'high', 'high', 'medium', 'French', 'medium', 'medium', 'low', '', 'low', 'low', 'low'),
 (2, 101, 'Havard', '2016-09-25', '2016-09-26', 'BSc', 'MIT', '2016-09-26', '2016-09-26', 'SSCE', 'CISCO', '2016-09-25', '2016-09-25', 'OSCP', 'English', 'high', 'high', 'medium', 'French', 'medium', 'medium', 'low', '', 'low', 'low', 'low'),
 (3, 102, 'Havard', '2016-09-25', '2016-09-26', 'BSc', 'MIT', '2016-09-26', '2016-09-26', 'SSCE', 'CISCO', '2016-09-25', '2016-09-25', 'CISSP', 'English', 'high', 'high', 'medium', 'French', 'medium', 'medium', 'low', '', 'low', 'low', 'low'),
@@ -159,7 +159,8 @@ INSERT INTO `events_meetings` (`id`, `event_title`, `date_from`, `date_to`, `sta
 (3, 'Staff Meeting', '2016-10-14', '2016-10-14', '09:00:00', '09:00:00', '#ab47bc'),
 (4, 'Dinner', '2016-10-16', '2016-10-16', '10:00:00', '10:30:00', '#84ffff'),
 (5, 'General Meeting', '2016-10-18', '2016-10-18', '09:00:00', '09:00:00', '#26c6da'),
-(6, 'Sample', '2016-10-18', '2016-10-18', '08:00:00', '09:00:00', '#ab47bc');
+(6, 'Sample', '2016-10-18', '2016-10-18', '08:00:00', '09:00:00', '#ab47bc'),
+(7, 'announcement', '2016-10-19', '2016-10-19', '09:00:00', '09:30:00', '#26c6da');
 
 -- --------------------------------------------------------
 
@@ -235,7 +236,10 @@ CREATE TABLE `leave_absences` (
 INSERT INTO `leave_absences` (`id`, `user_id`, `fullname`, `reason`, `start_date`, `end_date`, `status`) VALUES
 (1, 101, 'Akinola David', 'OFFICIAL LEAVE', '2016-10-12', '2016-10-19', 'GRANTED '),
 (2, 100, 'Doe John', 'OFFICIAL LEAVE', '2016-10-18', '2016-10-19', 'GRANTED '),
-(3, 102, 'David Susan', 'MATERNITY LEAVE', '2016-10-12', '2016-10-19', 'DENIED ');
+(3, 102, 'David Susan', 'MATERNITY LEAVE', '2016-10-12', '2016-10-19', 'DENIED '),
+(4, 101, 'Akinola David', 'STUDY LEAVE', '2016-10-19', '2016-10-21', 'GRANTED '),
+(5, 100, 'Doe John', 'STUDY LEAVE', '2016-10-19', '2016-10-22', 'GRANTED '),
+(6, 101, 'Akinola David', 'OFFICIAL LEAVE', '2016-10-21', '2016-10-22', 'DENIED ');
 
 -- --------------------------------------------------------
 
@@ -376,7 +380,7 @@ ALTER TABLE `employment_details`
 -- AUTO_INCREMENT for table `events_meetings`
 --
 ALTER TABLE `events_meetings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `family_details`
 --
@@ -386,7 +390,7 @@ ALTER TABLE `family_details`
 -- AUTO_INCREMENT for table `leave_absences`
 --
 ALTER TABLE `leave_absences`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `users`
 --

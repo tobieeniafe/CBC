@@ -4,17 +4,17 @@
 <head>
 <title>CBC e-Portal</title>
   
-  <link rel="stylesheet" type="text/css"  href= "css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css"  href= "css/style.css">
+  <link rel="stylesheet" type="text/css"  href= "../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css"  href= "../css/style.css">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
-  <script type="text/javascript" src='js/jquery.js'></script>
-  <script type="text/javascript" src='js/script.js'></script>
-  <link id="favicon" rel="shortcut icon" href="images/emea.png" type="image/png" />
+  <script type="text/javascript" src='../js/jquery.js'></script>
+  <script type="text/javascript" src='../js/script.js'></script>
+  <link id="favicon" rel="shortcut icon" href="../images/emea.png" type="image/png" />
 </head>
 <body>
-<div class="logo"><img src="images/emea.png" class="emea"></div>
+<div class="logo"><img src="../images/emea.png" class="emea"></div>
 
      
 <header><h1 align="center">Employee Profile Registration Form</h1></header>

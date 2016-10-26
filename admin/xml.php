@@ -5,15 +5,19 @@
 
 
 <?php  
-include_once 'dbconnect.php';
-
+include_once '../dbconnect.php';
+$xml = '';
 $root_element = 'monthly'; 
 
 $sql = "SELECT * FROM events_meetings";
 
 $result = mysqli_query($conn,$sql);
 if (!$result) {
-    die('Invalid query: ' . mysqli_error($conn));
+   ?>
+   <script>
+      console.log('Invalid query: '+'<?php echo mysqli_error($conn) ?>')
+   </script>
+    <?php
 }
 
 if(mysqli_num_rows($result)>0)
@@ -41,7 +45,12 @@ if(mysqli_num_rows($result)>0)
 
 }
 else{
-   die("No result found in table");
+   ?>
+
+   <script>
+      console.log('No results found in table')
+   </script>
+   <?php
 }
 
  

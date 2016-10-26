@@ -1,5 +1,5 @@
 <?php
-include 'dbconnect.php';
+include '../dbconnect.php';
 
 
   $staff_id='';$lastname='';$firstname='';$othername='';$dob='';$nationality='';$maidenname='';$state='';$telephone='';$title='';$religion='';$maritalstatus='';$marriagedate='';$spousename='';$spousenat='';$spousepro='';$address='';$employmentdate='';$email='';$postalcode='';$nextofkin='';$kinaddress='';$kinrelationship='';$dependantname1='';$dependantdob1='';$dependantaddress1='';$dependantphone1='';$dependantname2='';$dependantdob2='';$dependantaddress2='';$dependantphone2='';$dependantname3='';$dependantdob3='';$dependantaddress3='';$dependantphone3='';$hobbies='';$conviction='';$convictionreason='';$cbcrelative='';$cbcrelative_name='';$cbcrelative_relationship='';$familymember_name1='';$familymember_relationship1='';$familymember_dob1='';$familymember_name2='';$familymember_relationship2='';$familymember_dob2='';$familymember_name3='';$familymember_relationship3='';$familymember_dob3='';$college_name='';$college_start='';$college_finish='';$college_certificate='';$highschool_name='';$highschool_start='';$highschool_finish='';$highschool_certificate='';$professional_name='';$professional_start='';$professional_finish='';$professional_certificate='';$language1='';$speak1='';$write1='';$read1='';$language2='';$speak2='';$write2='';$read2='';$language3='';$speak3='';$write3='';$read3='';$prevjoborg1='';$prevjobtitle1='';$prevjobduty1='';$prevdate_start1='';$prevdate_finish1='';$prevsalary_start1='';$prevsalary_finish1='';$prevallowance_start1='';$prevallowance_finish1='';$leave_reason1='';$prevjoborg2='';$prevjobtitle2='';$prevjobduty2='';$prevdate_start2='';$prevdate_finish2='';$prevsalary_start2='';$prevsalary_finish2='';$prevallowance_start2='';$prevallowance_finish2='';$leave_reason2='';$prevjoborg3='';$prevjobtitle3='';$prevjobduty3='';$prevdate_start3='';$prevdate_finish3='';$prevsalary_start3='';$prevsalary_finish3='';$prevallowance_start3='';$prevallowance_finish3='';$leave_reason3='';$p_refreename='';$p_refreedesignation='';$p_refreeaddress='';$p_refreenumber='';$a_refreename='';$a_refreedesignation='';$a_refreeaddress='';$a_refreenumber='';$pr_refreename='';$pr_refreedesignation='';$pr_refreeaddress='';$pr_refreenumber='';$agreement='';$image_location='';$subsidiary='';$user_id='';
@@ -127,7 +127,7 @@ if($result1){
     if ($password == $confirm_password) {
         $sql = "INSERT INTO `users`(`user_id`, `username`, `password`, `firstname`, `lastname`, `status`) VALUES ('$user_id','$login_username','$login_password','$firstname','$lastname','staff')";
         mysqli_query($conn,$sql);
-        header('location: login_staff.php');
+        header('location: ../staff/login_staff.php');
                 //$session_password = $new_password;
                 
 

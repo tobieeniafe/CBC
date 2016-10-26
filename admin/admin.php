@@ -1,6 +1,6 @@
 <?php
-include 'dbconnect.php';
-include_once 'xml.php';
+include '../dbconnect.php';
+include 'xml.php';
 ?>
 
 
@@ -34,7 +34,7 @@ $search_filter = ''; $search_filter_input = '';
 
                 <li><a href="#" id="view_all">View All <span class="glyphicon glyphicon-eye-open"></span></a></li>
 
-                <li><a href="#" id="search">Search <span class="glyphicon glyphicon-search"></span></a></li>
+                <li><a href="#" id="search">Quick Search <span class="glyphicon glyphicon-search"></span></a></li>
 
                 <li><a href="#" id="manage_staff">Manage Staff <i class="fa fa-users"></i></span></a></li>
 
@@ -58,7 +58,7 @@ $search_filter = ''; $search_filter_input = '';
                         <div class="col-md-6">
                         	<i><h4>Welcome <?php echo $session_user ?>, today is <?php echo date("l jS \of F Y ") ?></h4></i>
                         </div>
-                        <div class="col-md-1"><a href="logout.php" class="btn btn-default" style="background-color:#e6e6e6"><span class="glyphicon glyphicon-off"> Logout</span></a></div>
+                        <div class="col-md-1"><a href="../index.php" class="btn btn-default" style="background-color:#e6e6e6"><span class="glyphicon glyphicon-off"> Logout</span></a></div>
                         <div class="col-md-1"></div>
                         </div>
                         <br>
@@ -73,7 +73,7 @@ $search_filter = ''; $search_filter_input = '';
     	<div class="row">
 
     		<div class="col-md-2" id="events">
-    			<img src="images/calendar.png" style="width: 100px;height: 100px;"><h5><b>Your Events for today</b></h5>
+    			<img src="../images/calendar.png" style="width: 100px;height: 100px;"><h5><b>Your Events for today</b></h5>
     			<?php
 					$date = date("Y-m-d").'%'; 
     			
@@ -88,7 +88,7 @@ $search_filter = ''; $search_filter_input = '';
     		<div class="col-md-5"></div>
     		
     		<div class="col-md-2" id="birthdays">
-    			<img src="images/birthday-cake.png" style="width: 100px;height: 100px;"><h5><b>Birthdays this month</b></h5>
+    			<img src="../images/birthday-cake.png" style="width: 100px;height: 100px;"><h5><b>Birthdays this month</b></h5>
 				<?php
 					$date = '____-'.date('m').'%';
 					$sql = "SELECT FirstName , LastName , D_O_B FROM `personal_information` WHERE `D_O_B` LIKE '$date' ORDER BY `D_O_B` ASC";
@@ -102,7 +102,7 @@ $search_filter = ''; $search_filter_input = '';
     		</div>
 
 			<div class="col-md-2" id="weddings">
-    			<img src="images/wedding-cake.png" style="width: 100px;height: 100px;"><h5><b>Wedding Anniversaries this month</b></h5>
+    			<img src="../images/wedding-cake.png" style="width: 100px;height: 100px;"><h5><b>Wedding Anniversaries this month</b></h5>
 				<?php
 					$date = '____-'.date('m').'%';
 					$sql = "SELECT FirstName , LastName ,Marriage_Date FROM `personal_information` WHERE `Marriage_Date` LIKE '$date' ORDER BY `Marriage_Date` ASC";
@@ -115,8 +115,6 @@ $search_filter = ''; $search_filter_input = '';
     		</div>	
 
     	</div>
-
-
 
 
 
@@ -305,7 +303,7 @@ $search_filter = ''; $search_filter_input = '';
 			if ($new_password == $confirm_password && $session_password == $current_password) {
 				$sql = "UPDATE `users` SET `username`= '$username',`password`= '$new_password' WHERE `username` = '$session_user' AND `password` = '$current_password' ";
 				mysqli_query($conn,$sql);
-				header('location: login_staff.php');
+				header('location: login.php');
 				//$session_password = $new_password;
 				?>
 	        <style type="text/css">
@@ -468,7 +466,7 @@ $search_filter = ''; $search_filter_input = '';
       </div>
       <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 	      <div class="modal-body">
-	       <img src="<?php echo $row['Passport_photograph'] ?>" style="width: 100px; height: 100px;" class="img-circle">
+	       <img src="<?php echo '../'.$row['Passport_photograph'] ?>" style="width: 100px; height: 100px;" class="img-circle">
 	       <br>
 	       
 	       <input type="hidden" name="user_id" class="form-control" value="<?php echo $row['user_id'] ?>">
@@ -560,7 +558,10 @@ $search_filter = ''; $search_filter_input = '';
 		<!-- Manage Staff Page -->
 
 		<div id="manage_staff_page">
-			<h3>Manage Staff</h3>
+			<div class="row container">
+				<div class="col-md-12"><?php include 'searchaction.php';?></div>
+			</div>
+
 		</div>
 
 		<!-- End Manage Staff Page -->
@@ -683,7 +684,7 @@ $search_filter = ''; $search_filter_input = '';
 
 				<div id="general" class="tab-pane fade row">
 				    
-					<div class="col-md-6">
+					<div class="col-md-7">
 						<?php
 							$sql = "SELECT * FROM `leave_absences` WHERE `status`='PENDING' ";
 							$query = mysqli_query($conn,$sql); 
@@ -722,7 +723,7 @@ $search_filter = ''; $search_filter_input = '';
 						<br>
 					                	
 					                		
-					<div class="col-md-6">
+					<div class="col-md-5">
 						<?php		    			
 							$sql = "SELECT * FROM `leave_absences` ";
 							$query = mysqli_query($conn,$sql); 

@@ -42,10 +42,10 @@ if ($_POST) {
 <head>
 <title>CBC e-Portal</title>
   
-  <link rel="stylesheet" type="text/css"  href= "css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css"  href= "css/style.css">
+  <link rel="stylesheet" type="text/css"  href= "../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css"  href= "../css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-  <link id="favicon" rel="shortcut icon" href="images/emea.png" type="image/png" />
+  <link id="favicon" rel="shortcut icon" href="../images/emea.png" type="image/png" />
 </head>
 <body>
   
