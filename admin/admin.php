@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include '../dbconnect.php';
 include 'xml.php';
 ?>
@@ -538,9 +539,6 @@ $search_filter = ''; $search_filter_input = '';
     </div>
   </div>
 </div>
-
-				
-				
 		<?php
 		}
 
@@ -555,6 +553,9 @@ $search_filter = ''; $search_filter_input = '';
 
         <!-- End  Search Page -->    
 
+
+
+
 		<!-- Manage Staff Page -->
 
 		<div id="manage_staff_page">
@@ -565,6 +566,8 @@ $search_filter = ''; $search_filter_input = '';
 		</div>
 
 		<!-- End Manage Staff Page -->
+
+
 
 
        <!-- Events & Meetings Page -->
@@ -668,7 +671,7 @@ $search_filter = ''; $search_filter_input = '';
 							       		<option>MATERNITY LEAVE</option>
 							        	<option>PATERNITY LEAVE</option>
 							        </select></div>
-							        <div class="col-md-6"><label>Status</label><select class="form-control" name="status" readonly="">
+							        <div class="col-md-6"><label>Status</label><select class="form-control" name="status">
 							        	<option selected="">PENDING</option>
 							    	</select></div>
 						    	</div>
@@ -751,16 +754,6 @@ $search_filter = ''; $search_filter_input = '';
 
 			</div>
 					
-						
-                	
-	                	
-
-	                	
-
-
-                
-                	
-
 
        	</div>
 

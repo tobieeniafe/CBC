@@ -45,7 +45,7 @@
 
 
 
-
+error_reporting(0);
 
     $id = $_POST['user_id'];
     $subsidiary = $_POST['subsidiary'];

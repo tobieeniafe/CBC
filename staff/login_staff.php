@@ -43,6 +43,7 @@ if ($_POST) {
 <title>CBC e-Portal</title>
   
   <link rel="stylesheet" type="text/css"  href= "../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css"  href= "../css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
   <link id="favicon" rel="shortcut icon" href="../images/emea.png" type="image/png" />
@@ -54,17 +55,30 @@ if ($_POST) {
        <div align="center">
           <h1>STAFF LOGIN</h1>
 
-           <form action="" method="post" class="container">
+           <form action="" method="post" class="container" style="width: 620px">
               
-              <label>UserName:</label><input type="text" class="form-control" name="username" required style="width:600px;!important">
-
-              <label>Password:</label><input type="password" class="form-control" name="password" required style="width:600px;!important">
+              <div class="input-group" align="center">
+                <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" name="username" required style="width:500px;!important" placeholder="username">
+              </div>
+              <p></p>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
+                <input type="password" class="form-control" name="password" required style="width:500px;!important" placeholder="password">
+              </div>
               <br>
 
               <input type="submit" class="form-control btn-primary" value="Login" style="width:200px;!important">
                 
-           </form>
+            </form>
+
            <?php echo '<h4>'.$message.'</h4>' ?>
       </div>
 </body>
 </html>
+
+
+
+
+
+            
