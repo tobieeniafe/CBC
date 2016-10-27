@@ -835,7 +835,7 @@ $search_filter = ''; $search_filter_input = '';
 	   		$('#leave_absences_page').css('display','none');
 	   		$('#settings_page').css('display','none');
 
-	   		$('#activity , #view_all , #search , #events_meetings , #leave_absences').removeClass('active');
+	   		$('#activity , #view_all , #search , #events_meetings , #leave_absences, #settings').removeClass('active');
 	   		$(this).addClass('active');
 
 	   	});

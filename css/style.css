@@ -23,7 +23,7 @@ margin-top: 0px;
 float: right;
 }
 
-#dependant2 , #dependant3 , #familymember2 , #familymember3 , #employer2 , #employer3 , #family , #education , #login_details{
+#dependant2 , #dependant3 , #familymember2 , #familymember3 , #employer2 , #employer3 , #family , #education{
 	display: none;
 }
 

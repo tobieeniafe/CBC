@@ -59,27 +59,3 @@ $(document).ready(function(){
        $("#add_employer3").css('display','block');
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-// <div class="row">
-//                 <div class="col-md-10"></div>
-//                 <div class="col-md-1"><a href="#dependant1" class="btn btn-default" id="remove_dependant3">&#215; Remove</a></div>
-//             </div>
-
-
-
-
-//             <div class="row">
-//             <div class="col-md-1"><a href="#dependant1" class="btn btn-default" id="add_dependant3">&#43; Add</a></div>
-//         </div>

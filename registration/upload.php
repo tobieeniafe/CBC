@@ -14,7 +14,7 @@ $lastname = $_POST['lastname'];  $firstname = $_POST['firstname'];  $othername =
 
 
 
-$target_dir = "uploads/";
+$target_dir = "../uploads/";
 $file_name = $target_dir . basename($_FILES["image"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($file_name,PATHINFO_EXTENSION);
@@ -119,34 +119,23 @@ $result4= mysqli_query($conn, $sql_4);
 
 if($result1){
 
-   $result2; $result3; $result4;
-    $login_username = $_POST['login_username'];
-    $login_password = $_POST['login_password'];
-    $login_confirm_password = $_POST['login_confirm_password'];
-
-    if ($password == $confirm_password) {
-        $sql = "INSERT INTO `users`(`user_id`, `username`, `password`, `firstname`, `lastname`, `status`) VALUES ('$user_id','$login_username','$login_password','$firstname','$lastname','staff')";
-        mysqli_query($conn,$sql);
-        header('location: ../staff/login_staff.php');
-                //$session_password = $new_password;
-                
-
-            }
-    else{
-        ?>
-    <script type="text/javascript">             
-        window.alert('Sorry your passwords don\'t match');
-    </script>
-            
-    <?php 
-                //$message = "Sorry your passwords don't match";
-        }     
+    $result2; $result3; $result4;
+    session_start();
+    $_SESSION['user_id'] = $staff_id;
+    $_SESSION['firstname'] = $firstname;
+    $_SESSION['lastname'] = $lastname;
+   
  }
 
 
 
 if($result2 ){
-    echo " Records added successfully.";
+    ?>
+        <script>
+        alert('Records Added Successfully');
+        </script>
+    <?php
+    header('location: login_registration.php');
 } else{
     echo " ERROR: Could not able to execute  " . mysqli_error($conn);
 

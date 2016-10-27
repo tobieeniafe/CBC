@@ -665,37 +665,12 @@
           <h3>DECLARATION</h3>
          <input type ="checkbox" name="agreement" required>
           <p>I agree that the answers given by me to all the questions of this application are to the best of myknowledge true, correct and without mental reservations of any kind whatsoever. I further affirm that I have not withheld any facts or circumstances that would detrimentally affects this application.</p>
-          <button type="button" class="btn btn-primary" id="show_login">Submit</button>
+          <button type="submit" class="btn btn-primary" name ="submit">Submit</button>
 
 
 </div>
 
 
-<div id="login_details">
-    <div class="row" align="center"> 
-        <h3>Just One More Step</h3>
-        <div class="col-md-3"></div>
-
-        <div class="col-md-6">    
-
-                <label>UserName</label>
-                <input type="text" class="form-control" name="login_username" required="">
-
-                <label>New Password</label>
-                <input type="password" class="form-control" name="login_password" required="">
-
-                <label>Confirm Password</label>
-                <input type="password" class="form-control" name="login_confirm_password" required="">
-                <p></p>
-                <input type="submit" class="form-control btn-primary" name ="submit" style="width:200px;!important" width="50px">    
-            
-        </div>
-
-        <div class="col-md-3"></div>
-                        
-    
-    </div>
-    </div>
 
 </form>
 
@@ -726,13 +701,7 @@
         $("#family").css('display','block');
         $("#education").css('display','none');
     });
-    $("#show_login").click(function(){
-        $("#personal").css('display','none');
-        $("#family").css('display','none');
-        $("#education").css('display','none');
-        $("header").css('display','none');
-        $("#login_details").css('display','block');
-    });
+    
 });
 </script>
           
