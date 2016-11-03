@@ -31,7 +31,7 @@ $search_filter = ''; $search_filter_input = '';
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
 
-            	<li><a href="#" id="activity" class="active">Activity <i class="fa fa-line-chart"></i></span></a></li>
+            	<li><a href="#" id="activity" class="active">Dashboard <i class="fa fa-dashboard"></i></span></a></li>
 
                 <li><a href="#" id="view_all">View All <span class="glyphicon glyphicon-eye-open"></span></a></li>
 
@@ -86,7 +86,7 @@ $search_filter = ''; $search_filter_input = '';
 				?>
     		</div>
 
-    		<div class="col-md-5"></div>
+    		<div class="col-md-1"></div>
     		
     		<div class="col-md-2" id="birthdays">
     			<img src="../images/birthday-cake.png" style="width: 100px;height: 100px;"><h5><b>Birthdays this month</b></h5>
@@ -102,6 +102,8 @@ $search_filter = ''; $search_filter_input = '';
 				?>
     		</div>
 
+    		<div class="col-md-1"></div>
+    		
 			<div class="col-md-2" id="weddings">
     			<img src="../images/wedding-cake.png" style="width: 100px;height: 100px;"><h5><b>Wedding Anniversaries this month</b></h5>
 				<?php
@@ -134,11 +136,7 @@ $search_filter = ''; $search_filter_input = '';
             <!-- View All page -->
 
     <div id="view_all_page"><table class="table table-responsive">
-		<tr>
-			<th>Staff ID</th>
-			<th>Full Name</th>
-			<th>Subsidiary</th>
-		</tr>
+		
 
 		<?php
 		$sql = 'SELECT user_id , FirstName , LastName , subsidiary FROM personal_information ';
@@ -192,11 +190,7 @@ $search_filter = ''; $search_filter_input = '';
 
 		<div class="col-md-6">
 			<table class="table table-responsive">
-		<tr>
-			<th>Staff ID</th>
-			<th>Full Name</th>
-			<th>Subsidiary</th>
-		</tr>
+		
 
 		<?php
 
@@ -427,9 +421,9 @@ $search_filter = ''; $search_filter_input = '';
 	   					$('#search').addClass('active');
 		   			});
 		        </script>
-
-
+		        	
 				<?php
+
 
 			$search_filter = $_POST['search_filter'];
 			$search_filter_input = $_POST['search_filter_input'];
@@ -439,10 +433,29 @@ $search_filter = ''; $search_filter_input = '';
 			else{
 				$sql2 = "SELECT * FROM personal_information WHERE $search_filter LIKE '$search_filter_input%' ";
 			}
+
+
 			$query2 = mysqli_query($conn,$sql2);
+
+
+if ($query2 = mysqli_query($conn,$sql2)) {
+
+    
+    $row_count = mysqli_num_rows($query2);
+
+    
+	//echo $row_count;
+
+    if ($row_count == 0 ) {
+    	echo "<h3> sorry, there are no results with your query </h3>";
+    }
+
+}
+
 			while ($row = mysqli_fetch_array($query2 , MYSQLI_ASSOC) ) {
 
 			$fullname = $row['LastName'].' '.$row['FirstName'];
+
 		
 		?> 
 			<tr>
@@ -467,7 +480,7 @@ $search_filter = ''; $search_filter_input = '';
       </div>
       <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 	      <div class="modal-body">
-	       <img src="<?php echo '../'.$row['Passport_photograph'] ?>" style="width: 100px; height: 100px;" class="img-circle">
+	       <img src="<?php echo $row['Passport_photograph'] ?>" style="width: 100px; height: 100px;" class="img-circle">
 	       <br>
 	       
 	       <input type="hidden" name="user_id" class="form-control" value="<?php echo $row['user_id'] ?>">
@@ -636,14 +649,14 @@ $search_filter = ''; $search_filter_input = '';
 
        	<div id="leave_absences_page">
 
-			<ul class="nav nav-tabs">
+			<!-- <ul class="nav nav-tabs">
 			  <li class="active"><a data-toggle="tab" href="#personal" style="color: #000"><h5>PERSONAL</h5></a></li>
 			  <li><a data-toggle="tab" href="#general" style="color: #000"><h5>GENERAL</h5></a></li>
-			</ul>
+			</ul> -->
 
-			<div class="tab-content">
+			<!-- <div class="tab-content"> -->
 
-				<div id="personal" class="tab-pane fade in active row">    
+				<!-- <div id="personal" class="tab-pane fade in active row">    
 					<div class="col-md-4" style="padding-top: 20px"><form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 
 							<?php
@@ -682,10 +695,10 @@ $search_filter = ''; $search_filter_input = '';
 						   	<?php
 							}
 							?>
-				</div>
+				</div> -->
 
 
-				<div id="general" class="tab-pane fade row">
+				<!-- <div id="general" class="tab-pane fade row">   -->
 				    
 					<div class="col-md-7">
 						<?php
@@ -694,7 +707,7 @@ $search_filter = ''; $search_filter_input = '';
 							while ($row = mysqli_fetch_array($query , MYSQLI_ASSOC) ) {											
 							//echo '<h5>'.$row['fullname'].'   '.$row['user_id'].'</h5>';
 						?>
-						<table class="table table-responsive">
+						<table class="table table-responsive" >
 							<tr><form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 								<td><?php echo $row['user_id'] ?></td>
 								<td><?php echo $row['fullname'] ?></td>
@@ -718,14 +731,14 @@ $search_filter = ''; $search_filter_input = '';
 							$row=mysqli_fetch_array($query,MYSQLI_NUM);
 							//echo $row[0];
 							if ($row[0] == 0) {
-								echo "<h3> there are no new requests at this time </h3>";
+								echo "<h3> sorry, there are no new requests at this time </h3>";
 								}						
 						?>
 
 					</div>	
-						<br>
+						
 					                	
-					                		
+					            		
 					<div class="col-md-5">
 						<?php		    			
 							$sql = "SELECT * FROM `leave_absences` ";
@@ -749,10 +762,10 @@ $search_filter = ''; $search_filter_input = '';
 						?>
 					</div>
 				                	
-				</div>
+				<!-- </div> -->
 
 
-			</div>
+			<!-- </div> -->
 					
 
        	</div>
@@ -778,9 +791,9 @@ $search_filter = ''; $search_filter_input = '';
 				       		<label>Current Password</label>
 				       		<input type="password" class="form-control" name="current_password" placeholder="current password" required="">
 				       		<label>New Password</label>
-				       		<input type="password" class="form-control" name="new_password" placeholder="new password" required="">
+				       		<input type="password" class="form-control" name="new_password" placeholder="new password" required="" minlength="8">
 				       		<label>Confirm Password</label>
-				       		<input type="password" class="form-control" name="confirm_password" placeholder="confirm password" required="">
+				       		<input type="password" class="form-control" name="confirm_password" placeholder="confirm password" required="" minlength="8">
 				       		<p></p>
 				       		<input type="submit" class="btn btn-info" name="edit_user_btn" value="Save">
 			       		</form>

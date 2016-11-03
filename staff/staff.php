@@ -237,7 +237,7 @@ if($result1){
 						?>
 		    		</div>
 
-		    		<div class="col-md-5"></div>
+		    		<div class="col-md-1"></div>
 		    		
 		    		<div class="col-md-2" id="birthdays">
 		    			<img src="../images/birthday-cake.png" style="width: 100px;height: 100px;"><h5><b>Birthdays this month</b></h5>
@@ -253,6 +253,8 @@ if($result1){
 						?>
 		    		</div>
 
+		    		<div class="col-md-1"></div>
+		    		
 					<div class="col-md-2" id="weddings">
 		    			<img src="../images/wedding-cake.png" style="width: 100px;height: 100px;"><h5><b>Wedding Anniversaries this month</b></h5>
 						<?php
@@ -299,7 +301,7 @@ if($result1){
              <div class="modal-body">
               <p></p>
              
-                <img src="<?php echo '../'.$row['Passport_photograph'] ?>" style="width: 100px; height: 100px;" class="img-circle">
+                <img src="<?php echo $row['Passport_photograph'] ?>" style="width: 100px; height: 100px;" class="img-circle">
                  <br>
                 <input type="hidden" name="user_id" class="form-control"   style="width: 100px;" value="<?php echo $row['user_id'] ?>">
                 
@@ -311,7 +313,7 @@ if($result1){
            <div class="row">  
               <div class="col-md-1"></div>
               <div class="col-md-10">
-                 <p><h3>PERSONAL INFORMATION </h3></p>
+                 <!-- <p><h3>PERSONAL INFORMATION </h3></p> -->
                  <p></p>
                 
               <div class="col-md-3">
@@ -1129,9 +1131,9 @@ if($result1){
 				       		<label>Current Password</label>
 				       		<input type="password" class="form-control" name="current_password" placeholder="current password" required="">
 				       		<label>New Password</label>
-				       		<input type="password" class="form-control" name="new_password" placeholder="new password" required="">
+				       		<input type="password" class="form-control" name="new_password" placeholder="new password" required="" minlength="8">
 				       		<label>Confirm Password</label>
-				       		<input type="password" class="form-control" name="confirm_password" placeholder="confirm password" required="">
+				       		<input type="password" class="form-control" name="confirm_password" placeholder="confirm password" required="" minlength="8">
 				       		<p></p>
 				       		<input type="submit" class="btn btn-info" name="edit_user_btn" value="Save">
 			       		</form>

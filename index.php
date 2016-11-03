@@ -1,11 +1,12 @@
 
 <?php
 error_reporting(0);
-include 'dbconnect.php';
+//include 'dbconnect.php';
 session_start();
 session_unset();
 session_destroy();
 ?>
+<title>CBC e-Portal</title>
 <link id="favicon" rel="shortcut icon" href="images/emea.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
@@ -19,6 +20,7 @@ session_destroy();
   <script type="text/javascript" src='js/bootstrap.min.js'></script>
   <script type="text/javascript" src="js/monthly.js"></script>
   <script type="text/javascript" src='js/script.js'></script>
+  <div class="logo"><img src="images/emea.png" class="emea"></div>
 <div class="row">
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
@@ -41,8 +43,8 @@ session_destroy();
 	</div>
 	<br><br>
 	<div class="row">
-		<div class="col-md-7"></div>
-		<div  class="col-md-3"><h4>Not Registered? <a href="registration/registration.php">Register Now</a></h4></div>
+		<div class="col-md-6"></div>
+		<div  class="col-md-3"><h4>Not Registered? <a href="registration/registration.php" target="_blank">Register Now</a></h4></div>
 	</div>
 </div>
 

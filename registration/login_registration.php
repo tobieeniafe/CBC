@@ -20,10 +20,10 @@ $lastname = $_SESSION['lastname'];
                 <input type="text" class="form-control" name="login_username" required="" style="width:500px;!important">
 
                 <label>New Password</label>
-                <input type="password" class="form-control" name="login_password" required="" style="width:500px;!important">
+                <input type="password" class="form-control" name="login_password" required="" style="width:500px;!important" minlength="8">
 
                 <label>Confirm Password</label>
-                <input type="password" class="form-control" name="login_confirm_password" required="" style="width:500px;!important">
+                <input type="password" class="form-control" name="login_confirm_password" required="" style="width:500px;!important" minlength="8">
                 <p></p>
                 <input type="submit" class="form-control btn-primary" name ="submit" style="width:200px;!important">    
         </form>  

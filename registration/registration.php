@@ -664,7 +664,7 @@
            
           <h3>DECLARATION</h3>
          <input type ="checkbox" name="agreement" required>
-          <p>I agree that the answers given by me to all the questions of this application are to the best of myknowledge true, correct and without mental reservations of any kind whatsoever. I further affirm that I have not withheld any facts or circumstances that would detrimentally affects this application.</p>
+          <p>I agree that the answers given by me to all the questions of this application are to the best of my knowledge true, correct and without mental reservations of any kind whatsoever & affirm that I have not withheld any facts or circumstances that would detrimentally affect this application.</p>
           <button type="submit" class="btn btn-primary" name ="submit">Submit</button>
 
 
