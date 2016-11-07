@@ -1,10 +1,19 @@
 
 <?php
 error_reporting(0);
+session_start();
+if ($_SESSION['cbc_admin']) {
+	header('location: admin/admin.php');
+}
+else if ($_SESSION['cbc_staff']) {
+	header('location: staff/staff.php');
+}
+else{
 //include 'dbconnect.php';
 session_start();
 session_unset();
 session_destroy();
+}
 ?>
 <title>CBC e-Portal</title>
 <link id="favicon" rel="shortcut icon" href="images/emea.png" type="image/png" />

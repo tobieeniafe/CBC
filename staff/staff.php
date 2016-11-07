@@ -119,7 +119,7 @@ if($result1){
 	                    
 	                </div>
 	                <div class="col-md-1">
-	                    <a href="../index.php" class="btn btn-default" style="background-color:#e6e6e6"><span class="glyphicon glyphicon-off"> Logout</span></a>
+	                    <a href="../logout.php" class="btn btn-default" style="background-color:#e6e6e6"><span class="glyphicon glyphicon-off"> Logout</span></a>
 	                </div>
 	                <div class="col-md-1"></div>
                 </div>

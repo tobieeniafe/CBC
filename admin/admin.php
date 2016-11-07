@@ -59,7 +59,7 @@ $search_filter = ''; $search_filter_input = '';
                         <div class="col-md-6">
                         	<i><h4>Welcome <?php echo $session_user ?>, today is <?php echo date("l jS \of F Y ") ?></h4></i>
                         </div>
-                        <div class="col-md-1"><a href="../index.php" class="btn btn-default" style="background-color:#e6e6e6"><span class="glyphicon glyphicon-off"> Logout</span></a></div>
+                        <div class="col-md-1"><a href="../logout.php" class="btn btn-default" style="background-color:#e6e6e6"><span class="glyphicon glyphicon-off"> Logout</span></a></div>
                         <div class="col-md-1"></div>
                         </div>
                         <br>

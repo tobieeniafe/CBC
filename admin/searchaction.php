@@ -8,7 +8,7 @@
             <select class="form-control" name="search_employee_filter">
               <option value="name">Name</option>
               <option value="user_id">Staff ID</option>
-              <option value="subsidiary">Subsidiary</option>
+              <!--<option value="subsidiary">Subsidiary</option> -->
             </select>
             <div class="input-group">
               <input type="text" name="search_employee_input" class="form-control" placeholder="Who would you like to search for?">
@@ -53,9 +53,9 @@ error_reporting(0);
     $email = $_POST['email'];
     $lastname = $lastname = $_POST['lastname'];  $firstname = $_POST['firstname'];  $othername = $_POST['othername'];  $dob = $_POST['dob'];  $nationality = $_POST['nationality'];  $maidenname = $_POST['maidenname'];  $state = $_POST['state'];  $telephone = $_POST['telephone'];  $title = $_POST['title'];  $religion = $_POST['religion'];  $maritalstatus = $_POST['maritalstatus'];  $marriagedate = $_POST['marriagedate'];  $spousename = $_POST['spousename'];  $spousenat = $_POST['spousenat'];  $spousepro = $_POST['spousepro'];  $address = $_POST['address'];  $employmentdate = $_POST['employmentdate'];  $email = $_POST['email'];  $postalcode = $_POST['postalcode'];  $nextofkin = $_POST['nextofkin'];  $kinaddress = $_POST['kinaddress'];  $kinrelationship = $_POST['kinrelationship'];  $dependantname1 = $_POST['dependantname1'];  $dependantdob1 = $_POST['dependantdob1'];  $dependantaddress1 = $_POST['dependantaddress1'];  $dependantphone1 = $_POST['dependantphone1'];  $dependantname2 = $_POST['dependantname2'];  $dependantdob2 = $_POST['dependantdob2'];  $dependantaddress2 = $_POST['dependantaddress2'];  $dependantphone2 = $_POST['dependantphone2'];  $dependantname3 = $_POST['dependantname3'];  $dependantdob3 = $_POST['dependantdob3'];  $dependantaddress3 = $_POST['dependantaddress3']; $dependantphone3 = $_POST['dependantphone3'];  $hobbies = $_POST['hobbies'];  $conviction = $_POST['conviction'];  $convictionreason = $_POST['convictionreason'];  $cbcrelative = $_POST['cbcrelative'];  $cbcrelative_name = $_POST['cbcrelative_name'];  $cbcrelative_relationship = $_POST['cbcrelative_relationship'];  $familymember_name1 = $_POST['familymember_name1'];  $familymember_relationship1 = $_POST['familymember_relationship1'];  $familymember_dob1 = $_POST['familymember_dob1'];  $familymember_name2 = $_POST['familymember_name2'];  $familymember_relationship2 = $_POST['familymember_relationship2'];  $familymember_dob2 = $_POST['familymember_dob2'];  $familymember_name3 = $_POST['familymember_name3'];  $familymember_relationship3 = $_POST['familymember_relationship3'];  $familymember_dob3 = $_POST['familymember_dob3'];  $college_name = $_POST['college_name'];  $college_start = $_POST['college_start'];  $college_finish = $_POST['college_finish'];  $college_certificate = $_POST['college_certificate'];  $highschool_name = $_POST['highschool_name'];  $highschool_start = $_POST['highschool_start'];  $highschool_finish = $_POST['highschool_finish'];  $highschool_certificate = $_POST['highschool_certificate'];  $professional_name = $_POST['professional_name'];  $professional_start = $_POST['professional_start'];  $professional_finish = $_POST['professional_finish'];  $professional_certificate = $_POST['professional_certificate']; $speak1 = $_POST['speak1'];  $write1 = $_POST['write1'];  $read1 = $_POST['read1'];  $speak2 = $_POST['speak2'];  $write2 = $_POST['write2'];  $read2 = $_POST['read2'];  $speak3 = $_POST['speak3'];  $write3 = $_POST['write3'];  $read3 = $_POST['read3'];   $prevjoborg1 = $_POST['prevjoborg1'];  $prevjobtitle1 = $_POST['prevjobtitle1'];  $prevjobduty1 = $_POST['prevjobduty1'];  $prevdate_start1 = $_POST['prevdate_start1'];  $prevdate_finish1 = $_POST['prevdate_finish1'];  $prevsalary_start1 = $_POST['prevsalary_start1'];  $prevsalary_finish1 = $_POST['prevsalary_finish1'];  $prevallowance_start1 = $_POST['prevallowance_start1'];  $prevallowance_finish1 = $_POST['prevallowance_finish1'];  $leave_reason1 = $_POST['leave_reason1'];  $prevjoborg2 = $_POST['prevjoborg2'];  $prevjobtitle2 = $_POST['prevjobtitle2'];  $prevjobduty2 = $_POST['prevjobduty2'];  $prevdate_start2 = $_POST['prevdate_start2'];  $prevdate_finish2 = $_POST['prevdate_finish2'];  $prevsalary_start2 = $_POST['prevsalary_start2'];  $prevsalary_finish2 = $_POST['prevsalary_finish2'];  $prevallowance_start2 = $_POST['prevallowance_start2'];  $prevallowance_finish2 = $_POST['prevallowance_finish2'];  $leave_reason2 = $_POST['leave_reason2'];  $prevjoborg3 = $_POST['prevjoborg3'];  $prevjobtitle3 = $_POST['prevjobtitle3'];  $prevjobduty3 = $_POST['prevjobduty3'];  $prevdate_start3 = $_POST['prevdate_start3'];  $prevdate_finish3 = $_POST['prevdate_finish3'];  $prevsalary_start3 = $_POST['prevsalary_start3'];  $prevsalary_finish3 = $_POST['prevsalary_finish3'];  $prevallowance_start3 = $_POST['prevallowance_start3'];  $prevallowance_finish3 = $_POST['prevallowance_finish3'];  $leave_reason3 = $_POST['leave_reason3'];  $p_refreename = $_POST['p_refreename'];  $p_refreedesignation = $_POST['p_refreedesignation'];  $p_refreeaddress = $_POST['p_refreeaddress'];  $p_refreenumber = $_POST['p_refreenumber'];  $a_refreename = $_POST['a_refreename'];  $a_refreedesignation = $_POST['a_refreedesignation'];  $a_refreeaddress = $_POST['a_refreeaddress'];  $a_refreenumber = $_POST['a_refreenumber'];  $pr_refreename = $_POST['pr_refreename'];  $pr_refreedesignation = $_POST['pr_refreedesignation'];  $pr_refreeaddress = $_POST['pr_refreeaddress'];  $pr_refreenumber = $_POST['pr_refreenumber'];    $subsidiary = $_POST['subsidiary']; $staff_id = $_POST['staff_id']; $language1 = $_POST['language1']; $language2 = $_POST['language2']; $language3 = $_POST['language3'];  $user_id = $_POST['staff_id'];
 
-    $conn = mysqli_connect("localhost","root","","cbc"); //re-establishing connection
+    //$conn = mysqli_connect("localhost","root","","cbc"); //re-establishing connection
 
-    $db = mysqli_select_db( $conn,"cbc"); // Selecting database.
+    //$db = mysqli_select_db( $conn,"cbc"); // Selecting database.
      
     $fullname = $lastname.' '.$firstname;
 
@@ -98,8 +98,6 @@ if($result2 ){?>
             $('#manage_staff').addClass('active');
           });
         window.alert('Update Successful');
-        $('#activity , #view_all , #search , #manage_staff , #events_meetings , #leave_absences , #settings').removeClass('active');
-        $(this).addClass('active');
        </script>
    <?php
 } else{
@@ -125,9 +123,6 @@ if($result2 ){?>
             $('#manage_staff').addClass('active');
           });
         window.alert('Delete Successful');
-
-        $('#activity , #view_all , #search , #manage_staff , #events_meetings , #leave_absences , #settings').removeClass('active');
-        $(this).addClass('active');
        </script>
           
           <?php 
@@ -145,34 +140,49 @@ if($result2 ){?>
       $search_employee_filter = $_POST['search_employee_filter'];
       $search_employee_input = $_POST['search_employee_input'];
        ?>
-        <script type="text/javascript">
-        $(window).load(function(){
-            $('#activity').removeClass('active');
-            $('#manage_staff').addClass('active');
-          });
-       // window.alert('Delete Successful');
-        
-        $('#activity , #view_all , #search , #manage_staff , #events_meetings , #leave_absences , #settings').removeClass('active');
-        $(this).addClass('active');
-       </script>
+
           
      <style type="text/css">
        #manage_staff_page {display: block;}
        #activity_page { display: none;}
      </style>
+     <script type="text/javascript">
+       $(window).load(function(){
+            $('#activity').removeClass('active');
+            $('#manage_staff').addClass('active');
+          });
+       </script>
      <?php
 
       if ($search_employee_filter == 'name') {
             $sql2 = " SELECT * FROM `personal_information` AS pe INNER JOIN `family_details` AS fa ON pe.user_id = fa.user_id INNER JOIN `educational_details` AS ed ON pe.user_id = ed.user_id INNER JOIN `employment_details` AS em ON pe.user_id = em.user_id  WHERE FirstName LIKE '$search_employee_input%' OR LastName LIKE '$search_employee_input%'";
       }
-      else{
-            $sql2 = "SELECT * FROM `personal_information` AS pe INNER JOIN `family_details` AS fa ON pe.user_id = fa.user_id INNER JOIN `educational_details` AS ed ON pe.user_id = ed.user_id INNER JOIN `employment_details` AS em ON pe.user_id = em.user_id WHERE $search_employee_filter LIKE '$search_employee_input%' ";
+      else if ($search_employee_filter == 'user_id'){
+            $sql2 = "SELECT * FROM personal_information AS pe INNER JOIN family_details AS fa ON pe.user_id=fa.user_id INNER JOIN educational_details AS ed ON pe.user_id=ed.user_id INNER JOIN employment_details AS em ON pe.user_id=em.user_id WHERE pe.user_id LIKE '$search_employee_input%'";
       }
 
       $query2 = mysqli_query($conn,$sql2);
 
+    
+    $row_count = mysqli_num_rows($query2);
+
+    
+  //echo $row_count;
+
+    if ($row_count == 0 ) {
+      echo "<h3> sorry, there are no results with your query </h3>";
+    }
+    elseif ($row_count > 1) {
+      echo "<h3> sorry you can only search for one user </h3>";
+      while ($row = mysqli_fetch_array($query2 , MYSQLI_ASSOC)) {
+        $fullname = $row['LastName'].' '.$row['FirstName'];
+        echo "<ul><li><h4>".$fullname." - ".$row['user_id']."</h4></li></ul>";
+      }
+    }
+
+
            
-      while ($row = mysqli_fetch_array($query2 , MYSQLI_ASSOC) ) {
+      while ($row_count == 1 && $row = mysqli_fetch_array($query2 , MYSQLI_ASSOC) ) {
 
           
         $fullname = $row['LastName'].' '.$row['FirstName'];
@@ -203,7 +213,7 @@ if($result2 ){?>
            <div class="row">  
               <div class="col-md-1"></div>
               <div class="col-md-10">
-                 <p><h3>PERSONAL INFORMATION </h3></p>
+                <!--  <p><h3>PERSONAL INFORMATION </h3></p> -->
                  <p></p>
                 
               <div class="col-md-3">

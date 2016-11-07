@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2016 at 10:10 AM
+-- Generation Time: Nov 03, 2016 at 10:35 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -61,7 +61,7 @@ CREATE TABLE `educational_details` (
 
 INSERT INTO `educational_details` (`id`, `user_id`, `College_name`, `College_entry`, `College_exit`, `College_certification`, `Highschool_name`, `Highschool_entry`, `Highschool_exit`, `Highschool_certification`, `Professional_name`, `Professional_entry`, `Professional_exit`, `Professional_certification`, `Language_spoken1`, `Speaking_status1`, `Writing_status1`, `Reading_status1`, `Language_spoken2`, `Speaking_status2`, `Writing_status2`, `Reading_status2`, `Language_spoken3`, `Speaking_status3`, `Writing_status3`, `Reading_status3`) VALUES
 (1, 100, 'MIT', '2016-09-25', '2016-09-26', 'BSc', 'MIT', '2016-09-26', '2016-09-26', 'SSCE', 'CISCO', '2016-09-25', '2016-09-25', 'CCNA', 'English', 'high', 'high', 'medium', 'French', 'medium', 'medium', 'low', '', 'low', 'low', 'low'),
-(2, 101, 'Havard', '2016-09-25', '2016-09-26', 'BSc', 'MIT', '2016-09-26', '2016-09-26', 'SSCE', 'CISCO', '2016-09-25', '2016-09-25', 'OSCP', 'English', 'high', 'high', 'medium', 'French', 'High', 'medium', 'High', '', 'low', 'low', 'low'),
+(2, 101, 'Havard', '2016-11-15', '2016-09-26', 'BSc', 'MIT', '2016-09-26', '2016-11-14', 'SSCE', 'CISCO', '2016-11-06', '2016-09-25', 'OSCP', 'English', 'high', 'high', 'medium', 'French', 'High', 'medium', 'High', '', 'low', 'low', 'low'),
 (3, 102, 'Havard', '2016-09-25', '2016-09-26', 'BSc', 'MIT', '2016-09-26', '2016-09-26', 'SSCE', 'CISCO', '2016-09-25', '2016-09-25', 'CISSP', 'English', 'high', 'high', 'medium', 'French', 'medium', 'medium', 'low', '', 'low', 'low', 'low'),
 (4, 103, 'Havard', '2016-09-25', '2016-09-26', 'BSc', 'MIT', '2016-09-26', '2016-09-26', 'SSCE', 'CISCO', '2016-09-25', '2016-09-25', 'CISSP', 'English', 'high', 'high', 'medium', 'French', 'medium', 'medium', 'low', '', 'low', 'low', 'low'),
 (6, 104, 'Havard', '2016-09-25', '2016-09-26', 'BSc', 'MIT', '2016-09-26', '2016-09-26', 'SSCE', 'CISCO', '2016-09-25', '2016-09-25', 'CISSP', 'English', 'high', 'high', 'high', 'French', 'medium', 'low', 'low', 'German', 'high', 'high', 'high'),
@@ -127,8 +127,8 @@ CREATE TABLE `employment_details` (
 
 INSERT INTO `employment_details` (`id`, `user_id`, `Prev_organisation1`, `Job_title1`, `Job_description1`, `Job_entry1`, `Job_exit1`, `Salary_on_entry1`, `Salary_on_exit1`, `Allowance_on_entry1`, `Allowance_on_exit1`, `Reason_for_leave1`, `Prev_organisation2`, `Job_title2`, `Job_description2`, `Job_entry2`, `Job_exit2`, `Salary_on_entry2`, `Salary_on_exit2`, `Allowance_on_entry2`, `Allowance_on_exit2`, `Reason_for_leave2`, `Prev_organisation3`, `Job_title3`, `Job_description3`, `Job_entry3`, `Job_exit3`, `Salary_on_entry3`, `Salary_on_exit3`, `Allowance_on_entry3`, `Allowance_on_exit3`, `Reason_for_leave3`, `Referee1`, `RefereeDesignation1`, `RefereeAddress1`, `RefereeNumber1`, `Referee2`, `RefereeDesignation2`, `RefereeAddress2`, `RefereeNumber2`, `Referee3`, `RefereeDesignation3`, `RefereeAddress3`, `RefereeNumber3`, `Agreement`) VALUES
 (1, 100, 'Google', 'developer', 'software development', '2016-09-25', 2016, 50000, 75000, 0, 10000, 0, '', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', ' ', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', 'Bill James', 'Google', 'google estate', 123456, '', '', '', 0, '', '', '', 0, 'on'),
-(2, 101, 'Shell', 'Engineer', 'Site supervision', '2016-09-25', 0, 50000, 75000, 0, 10000, 0, '', 'Engineer', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', ' ', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', 'Bill James', 'Google', 'Shell close', 123456, '', '', '', 0, 'pr_refreename', 'pr_refreedesignation', 'pr_refreeaddress', 0, 'on'),
-(3, 102, 'IBM', 'Accountant', 'Auditing', '2016-09-25', 2016, 50000, 75000, 0, 10000, 0, '', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', ' ', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', 'Jimmy Fallon', 'IBM', 'Hollywood', 123456, '', '', '', 0, '', '', '', 0, 'on'),
+(2, 101, 'Shell', 'Engineer', 'Site supervision', '2016-09-25', 0, 50000, 75000, 0, 10000, 0, '', 'Engineer', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', ' ', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', 'Bill Gates', 'Microsoft', 'Shell close', 123456, '', '', '', 0, '', '', '', 0, 'on'),
+(3, 102, 'IBM', 'Accountant', 'Auditing', '2016-09-25', 0, 50000, 75000, 0, 10000, 0, '', 'Accountant', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', ' ', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', 'Jimmy Fallon', 'IBM', 'Hollywood', 123456, '', '', '', 0, '', '', '', 0, 'on'),
 (4, 103, 'Apple', 'Software developer', 'Forensic Analysis', '2016-09-25', 2016, 50000, 75000, 0, 10000, 0, '', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', ' ', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', 'Steve Jobs', 'Apple', 'California', 123456, '', '', '', 0, '', '', '', 0, 'on'),
 (6, 104, 'Apple', 'Software developer', 'Security Expert', '2016-09-25', 2016, 50000, 75000, 0, 10000, 0, '', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', ' ', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', 'Steve Jobs', 'Apple', 'California', 123456, '', '', '', 0, '', '', '', 0, 'on'),
 (7, 105, 'Access Estates', 'Estate Manager', 'Estate Management', '2016-09-25', 2016, 50000, 70000, 0, 0, 0, '', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', ' ', '', '', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', 'Edward Lyon', 'Owner', 'Access states', 123452, '', '', '', 0, '', '', '', 0, 'on');
@@ -148,6 +148,14 @@ CREATE TABLE `events_meetings` (
   `finish_time` time NOT NULL,
   `color` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `events_meetings`
+--
+
+INSERT INTO `events_meetings` (`id`, `event_title`, `date_from`, `date_to`, `start_time`, `finish_time`, `color`) VALUES
+(1, 'Sample Meeting', '2016-10-27', '2016-10-27', '09:00:00', '09:00:00', '#4caf50'),
+(2, 'announcement', '2016-10-27', '2016-10-27', '10:00:00', '10:00:00', '#26c6da');
 
 -- --------------------------------------------------------
 
@@ -194,8 +202,8 @@ CREATE TABLE `family_details` (
 
 INSERT INTO `family_details` (`id`, `user_id`, `Full_name`, `Name_of_dependant1`, `DOB_of_dependant1`, `Address_of_dependant1`, `MobileNo_of_dependant1`, `Name_of_dependant2`, `DOB_of_dependant2`, `Address_of_dependant2`, `MobileNo_of_dependant2`, `Name_of_dependant3`, `DOB_of_dependant3`, `Address_of_dependant3`, `MobileNo_of_dependant3`, `Hobbies`, `Convict_status`, `Conviction_reason`, `CBC_Relative_status`, `Name_of_relative`, `Relationship_with_relative`, `Familymember_name1`, `Relationship_with_familymember1`, `DOB_of_familymember1`, `Familymember_name2`, `Relationship_with_familymember2`, `DOB_of_familymember2`, `Familymember_name3`, `Relationship_with_familymember3`, `DOB_of_familymember3`) VALUES
 (1, 100, 'Doe John', 'Jane Doe', '2016-10-27', ' 123 sesame street', 123456, ' ', '0000-00-00', ' ', 0, ' ', '0000-00-00', ' ', 0, ' reading', 'no', '', ' no', ' ', '', ' Jane Doe ', 'sister', '2016-10-23', ' ', '', '0000-00-00', ' ', '', '0000-00-00'),
-(2, 101, 'Akinola Daniel', 'Jane Akinola', '2016-10-27', '1990-10-25', 0, ' ', '0000-00-00', ' ', 0, ' ', '0000-00-00', ' ', 0, ' reading', 'no', '', 'no', ' ', '', ' Janet  Akinola', 'sister', '2016-10-23', ' ', '', '0000-00-00', ' ', '', '0000-00-00'),
-(3, 102, 'David Susan', 'David Ben', '2016-10-27', ' 123 sesame street', 123456, ' ', '0000-00-00', ' ', 0, ' ', '0000-00-00', ' ', 0, ' reading', 'no', '', ' no', ' ', '', ' David Ben', 'husband', '2016-10-23', ' ', '', '0000-00-00', ' ', '', '0000-00-00'),
+(2, 101, 'Akinola Daniel', 'Jane Akinola', '2016-10-27', '', 0, ' ', '0000-00-00', ' ', 0, ' ', '0000-00-00', ' ', 0, ' reading', 'no', '', 'no', ' ', '', ' Janet  Akinola', 'sister', '2016-10-23', ' ', '', '0000-00-00', ' ', '', '0000-00-00'),
+(3, 102, 'David Susan', 'David Ben', '2016-10-27', '1995-10-25', 0, ' ', '0000-00-00', ' ', 0, ' ', '0000-00-00', ' ', 0, ' reading', 'no', '', 'no', ' ', '', ' David Ben', 'husband', '2016-10-23', ' ', '', '0000-00-00', ' ', '', '0000-00-00'),
 (4, 103, 'Mohammed Aisha', 'Mohammed Ali', '2016-10-27', ' 123 sesame street', 123456, ' ', '0000-00-00', ' ', 0, ' ', '0000-00-00', ' ', 0, ' coding', 'no', '', ' no', ' ', '', ' Mohammed Ali', 'brother', '2016-10-23', ' ', '', '0000-00-00', ' ', '', '0000-00-00'),
 (6, 104, 'Mohammed Fawaz', 'Mohammed Ali', '2016-10-27', ' 123 sesame street', 123456, ' ', '0000-00-00', ' ', 0, ' ', '0000-00-00', ' ', 0, ' coding', 'yes', 'assault', ' no', ' ', '', ' Mohammed Ali', 'brother', '2016-10-23', ' ', '', '0000-00-00', ' ', '', '0000-00-00'),
 (7, 105, 'Joseph Elizabeth', 'Joseph Ben', '2016-10-14', ' 123 sesame street', 12232, ' ', '0000-00-00', ' ', 0, ' ', '0000-00-00', ' ', 0, ' reading', 'no', '', ' no', ' ', '', ' Joseph Ben', 'son', '2016-09-26', ' ', '', '0000-00-00', ' ', '', '0000-00-00');
@@ -215,6 +223,13 @@ CREATE TABLE `leave_absences` (
   `end_date` date NOT NULL,
   `status` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `leave_absences`
+--
+
+INSERT INTO `leave_absences` (`id`, `user_id`, `fullname`, `reason`, `start_date`, `end_date`, `status`) VALUES
+(1, 103, 'Mohammed Aisha', 'OFFICIAL LEAVE', '2016-11-02', '2016-11-04', 'PENDING ');
 
 -- --------------------------------------------------------
 
@@ -255,12 +270,12 @@ CREATE TABLE `personal_information` (
 --
 
 INSERT INTO `personal_information` (`user_id`, `LastName`, `FirstName`, `OtherName`, `MaidenName`, `D_O_B`, `Nationality`, `State_of_Origin`, `Telephone_No`, `Title`, `Religion`, `Marital_Status`, `Marriage_Date`, `Spouse_Name`, `Spouse_Nationality`, `Spouse_Profession`, `Residential_Address`, `Date_of_Employment`, `Email_Address`, `Post_Code`, `Next_of_Kin`, `Next_of_Kin_Address`, `Relationship_with_Next_of_Kin`, `Passport_photograph`, `subsidiary`) VALUES
-(100, 'Doe', 'John', 'Sammy', '', '1992-10-25', 'American', 'Texas', 123456, 'mr', 'christianity', 'single', '0000-00-00', '', '', '', '123 sesame street', '2016-09-25', 'johndoe@mail.com', 0, 'Jane Doe', '123 sesame street', 'sister', 'uploads/avatar.png', 'GEDU TECHNOLOGIES'),
-(101, 'Akinola', 'David', 'Ola', '', '1990-10-25', 'Nigerian', 'Lagos', 123456, 'mr', 'Islam', 'Divorced', '0000-00-00', '', '', '', '123 sesame street', '2016-09-25', 'akindaniel@mail.com', 1000, 'Jane Akinola', '123 sesame street', 'sister', 'uploads/avatar4.png', 'ADMINISTRATION / H.R.'),
-(102, 'David', 'Susan', 'Maria', 'Alison', '1995-10-25', 'Nigerian', 'Lagos', 123456, 'mrs', 'christianity', 'married', '2016-10-12', 'David Ben', 'Nigerian', 'Doctor', '123 sesame street', '2016-09-25', 'susan@mail.com', 0, 'David Ben', '123 sesame street', 'husband', 'uploads/avatar2.png', 'ADMINISTRATION / H.R.'),
-(103, 'Mohammed', 'Aisha', 'Jane', 'Mohammed', '1997-10-25', 'American', 'New York', 123456, 'mrs', 'islam', 'single', '0000-00-00', '', '', '', '123 sesame street', '2016-09-25', 'aisha@mail.com', 0, 'Mohammed Ali', '123 sesame street', 'brother', 'uploads/avatar3.png', 'GEDU TECHNOLOGIES'),
-(104, 'Fawaz', 'Mohammed', 'Ozil', '', '1986-10-25', 'German', 'Berlin', 123456, 'mr', 'islam', 'single', '0000-00-00', '', '', '', '123 sesame street', '2016-09-25', 'fawaz@mail.com', 0, 'Mohammed Ali', '123 sesame street', 'brother', 'uploads/avatar5.png', 'CBC NETCOMMS'),
-(105, 'Joseph', 'Elizabeth', 'Mary', 'Joseph', '1992-10-27', 'American', 'new york', 123456, 'miss', 'christianity', 'single', '0000-00-00', '', '', '', '1234 st at open ', '2016-09-26', 'lizzy@mail.com', 0, 'Joseph Ben', '123 sesame street', 'son', 'uploads/user-5.png', 'CBC PROPERTIES');
+(100, 'Doe', 'John', 'Sammy', '', '1992-10-25', 'American', 'Texas', 123456, 'mr', 'christianity', 'single', '0000-00-00', '', '', '', '123 sesame street', '2016-09-25', 'johndoe@mail.com', 0, 'Jane Doe', '123 sesame street', 'sister', '../uploads/avatar.png', 'GEDU TECHNOLOGIES'),
+(101, 'Akinola', 'David', 'Ola', '', '1990-11-25', 'Nigerian', 'Lagos', 123456, 'mr', 'Islam', 'Divorced', '0000-00-00', '', '', '', '123 sesame street', '2016-09-25', 'akindaniel@mail.com', 1000, 'Jane Akinola', '123 sesame street', 'sister', '../uploads/avatar4.png', 'CBC INFRASTRUCTURE'),
+(102, 'David', 'Susan', 'Maria', 'Alison', '1995-11-25', 'Nigerian', 'Lagos', 123456, 'mrs', 'christianity', 'married', '2016-10-12', 'David Ben', 'Nigerian', 'Doctor', '123 sesame street', '2016-09-25', 'susan@mail.com', 0, 'David Ben', '123 sesame street', 'husband', '../uploads/avatar2.png', 'ADMINISTRATION / H.R.'),
+(103, 'Mohammed', 'Aisha', 'Jane', 'Mohammed', '1997-10-25', 'American', 'New York', 123456, 'mrs', 'islam', 'single', '0000-00-00', '', '', '', '123 sesame street', '2016-09-25', 'aisha@mail.com', 0, 'Mohammed Ali', '123 sesame street', 'brother', '../uploads/avatar3.png', 'GEDU TECHNOLOGIES'),
+(104, 'Fawaz', 'Mohammed', 'Ozil', '', '1986-10-25', 'German', 'Berlin', 123456, 'mr', 'islam', 'single', '0000-00-00', '', '', '', '123 sesame street', '2016-09-25', 'fawaz@mail.com', 0, 'Mohammed Ali', '123 sesame street', 'brother', '../uploads/avatar5.png', 'CBC NETCOMMS'),
+(105, 'Joseph', 'Elizabeth', 'Mary', 'Joseph', '1992-10-27', 'American', 'new york', 123456, 'miss', 'christianity', 'single', '0000-00-00', '', '', '', '1234 st at open ', '2016-09-26', 'lizzy@mail.com', 0, 'Joseph Ben', '123 sesame street', 'son', '../uploads/user-5.png', 'CBC PROPERTIES');
 
 -- --------------------------------------------------------
 
@@ -348,27 +363,27 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `educational_details`
 --
 ALTER TABLE `educational_details`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `employment_details`
 --
 ALTER TABLE `employment_details`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `events_meetings`
 --
 ALTER TABLE `events_meetings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `family_details`
 --
 ALTER TABLE `family_details`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `leave_absences`
 --
 ALTER TABLE `leave_absences`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `users`
 --
